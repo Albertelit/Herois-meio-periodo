@@ -1,5 +1,5 @@
-function MenuFunction(_x, _y, _options, _description = -1, _width = undefined, _height = undefined){
-	with(instance_create_depth(_x,_y,-99999,oMenu))
+function Menu(_x, _y, _options, _description = -1, _width = undefined, _height = undefined){
+	with(instance_create_depth(_x,_y,-999999,oMenu))
 	{
 	options = _options;
 	description = _description;
