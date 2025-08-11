@@ -55,7 +55,14 @@ function SubMenu(_options)
 }
 function MenuGoBack()
 {
-subMenuLevel--;
-options = optionsAbove[subMenuLevel];
-hover = 0; 
+	subMenuLevel--;
+	options = optionsAbove[subMenuLevel];
+	hover = 0; 
+}
+
+function MenuSelectAction(_user, _action)
+{
+	with (oMenu) active = false;
+	with (Obj_battle) BeginAction(_user, _action, _user);
+	with (oMenu) instance_destroy();
 }

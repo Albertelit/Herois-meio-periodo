@@ -5,7 +5,7 @@ global.actionLibrary =
     attack :
     {
         name : "Attack", //0
-        description : "{0} attacks!",
+        description : "{0} Ataca!",
         subMenu : -1,
         targetRequired : true,
         targetEnemyByDefault : true,
@@ -18,7 +18,27 @@ global.actionLibrary =
             var _damage = ceil(_user.poder + random_range(-_user.poder * 0.25, _user.poder * 0.25));
             BattleChangeHP(_targets[0], -_damage, 0);
         }
-    }
+    },
+	Taser : // sim eu sei, e meio paia, mas deixa funfar primeiro e dps troco
+	{
+		name : "Taser", //1
+        description : "{0} Eletrecuta!",
+        subMenu : "Magic",
+		pmCost : 2,
+        targetRequired : true,
+        targetEnemyByDefault : true, //0: party/self
+        targetAll : MODE.NEVER,
+        userAnimation : "attack",
+        effectSprite : sAttackIce,
+        effectOnTarget : MODE.ALWAYS,
+        func : function(_user, _targets)
+        {
+			// dano levemente fixo, arrumo dps pra depender de Poder
+            var _damage = irandom_range(10,20);
+			BattleChangeHP( _targets[0], - _damage);
+			// custo vira dps, poe enquanto nao desconta
+        }
+	}
 };
 
 enum MODE
@@ -35,19 +55,19 @@ enum MODE
 global.party = [
 	{
 		nome: "Emma", // 0
-		hp: 14,
-		hpMax: 30,
+		hp: 30,
+		hpMax: 25,
 		pm: 0,
 		pmMax: 6,
 		poder: 4,
 		perigo: 1, //não esqueça que os personagens vão ter perigo para serem focados
 		sprites: {idle: spr_EmmaD, attack: spr_EmmaD, defend: spr_EmmaD, down: spr_carteira},
-		actions: [global.actionLibrary.attack]
+		actions: [global.actionLibrary.attack, global.actionLibrary.Taser]
 		},
 		
 		{
-		nome: "Emma", // 1
-		hp: 14,
+		nome: "Aron", // 1
+		hp: 30,
 		hpMax: 30,
 		pm: 0,
 		pmMax: 6,
@@ -58,9 +78,9 @@ global.party = [
 		},
 		
 		{
-		nome: "Emma", // 2
-		hp: 14,
-		hpMax: 30,
+		nome: "P0IS0N", // 2
+		hp: 20,
+		hpMax: 20,
 		pm: 0,
 		pmMax: 6,
 		poder: 4,
@@ -70,9 +90,9 @@ global.party = [
 		},
 		
 		{
-		nome: "Emma", // 3
-		hp: 14,
-		hpMax: 30,
+		nome: "Anniela", // 3
+		hp: 20,
+		hpMax: 20,
 		pm: 0,
 		pmMax: 6,
 		poder: 999,
