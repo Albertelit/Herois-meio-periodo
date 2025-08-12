@@ -202,6 +202,7 @@ else //wait for delay and then end the turn
 
 function BattleStateVictoryCheck()
 {
+	
 	battleState = BattleStateTurnProgression;
 }
 
