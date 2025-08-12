@@ -12,6 +12,18 @@ currentUser = noone;
 currentAction = -1;
 currentTargets = noone;
 
+cursor =
+{
+    activeUser: noone,
+    activeTarget: noone,
+    activeAction : -1,
+    targetSide : -1,
+    targetIndex : 0,
+    targetAll : false,
+    confirmDelay : 0,
+    active : false
+};
+
 
 //criar inimigos
 for (var i = 0; i < array_length(enemies); i++)
