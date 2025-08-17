@@ -15,8 +15,8 @@ if (cursor.active)
 		confirmDelay ++
 		if (confirmDelay > 1)
 		{
-			_keyConfirme = keyboard_check_pressed(vk_enter);
-			_keyCancel = keyboard_check_pressed(vk_escape);
+			_keyConfirme = keyboard_check_pressed(vk_enter) || keyboard_check_pressed(90);
+			_keyCancel = keyboard_check_pressed(vk_escape) || keyboard_check_pressed(88);
 			_keyToggle = keyboard_check_pressed(vk_shift);
 		}
 		var _moveH = _keyRigth - _keyLeft;

@@ -59,7 +59,7 @@ global.party = [
 		hpMax: 25,
 		pm: 0,
 		pmMax: 6,
-		poder: 4,
+		poder: 999,
 		perigo: 1, //não esqueça que os personagens vão ter perigo para serem focados
 		sprites: {idle: spr_EmmaD, attack: spr_EmmaD, defend: spr_EmmaD, down: spr_carteira},
 		actions: [global.actionLibrary.attack, global.actionLibrary.Taser]
@@ -71,7 +71,7 @@ global.party = [
 		hpMax: 30,
 		pm: 0,
 		pmMax: 6,
-		poder: 4,
+		poder: 999,
 		perigo: 1, //não esqueça que os personagens vão ter perigo para serem focados
 		sprites: {idle: spr_EmmaD, attack: spr_EmmaD, defend: spr_EmmaD, down: spr_EmmaL},
 		actions: [global.actionLibrary.attack]
@@ -83,7 +83,7 @@ global.party = [
 		hpMax: 20,
 		pm: 0,
 		pmMax: 6,
-		poder: 4,
+		poder: 999,
 		perigo: 1, //não esqueça que os personagens vão ter perigo para serem focados
 		sprites: {idle: spr_EmmaD, attack: spr_EmmaD, defend: spr_EmmaD, down: spr_EmmaR},
 		actions: [global.actionLibrary.attack]

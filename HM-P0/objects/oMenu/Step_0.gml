@@ -8,7 +8,7 @@ if (active)
 	
 	//executar acao
 	
-	if (keyboard_check_pressed(vk_enter))
+	if (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(90))
 	{
 		if (array_length(options[hover]) > 1) && (options[hover][3] == true)
 		{
@@ -19,7 +19,7 @@ if (active)
 			}
 		}
 	}
-	if (keyboard_check_pressed(vk_escape))
+	if (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(88))
 	{
 		if (subMenuLevel > 0) MenuGoBack();
 	}

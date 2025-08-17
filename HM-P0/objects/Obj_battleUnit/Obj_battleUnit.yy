@@ -9,8 +9,8 @@
   "name":"Obj_battleUnit",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objetos",
-    "path":"folders/Objetos.yy",
+    "name":"obj_batalhas",
+    "path":"folders/Objetos/obj_batalhas.yy",
   },
   "parentObjectId":null,
   "persistent":false,

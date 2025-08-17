@@ -1,8 +1,8 @@
 {
   "$GMSprite":"",
-  "%Name":"spr_EmmaRoom",
+  "%Name":"JJ_Tower_TS",
   "bboxMode":0,
-  "bbox_bottom":159,
+  "bbox_bottom":191,
   "bbox_left":0,
   "bbox_right":191,
   "bbox_top":0,
@@ -12,16 +12,16 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"d9d97aeb-13c0-4bc7-bf1a-105d6b6b8fd4","name":"d9d97aeb-13c0-4bc7-bf1a-105d6b6b8fd4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"3a4f4fd8-9f30-4de7-88b7-7cb71b5cd12b","name":"3a4f4fd8-9f30-4de7-88b7-7cb71b5cd12b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":32,
   "gridY":32,
   "height":192,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"0ff97c94-4e1c-45c9-af7f-e0a8a1d77db4","blendMode":0,"displayName":"default","isLocked":false,"name":"0ff97c94-4e1c-45c9-af7f-e0a8a1d77db4","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"98613888-e088-46c6-a5ce-3a8e51cff10f","blendMode":0,"displayName":"default","isLocked":false,"name":"98613888-e088-46c6-a5ce-3a8e51cff10f","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"spr_EmmaRoom",
+  "name":"JJ_Tower_TS",
   "nineSlice":null,
   "origin":0,
   "parent":{
@@ -33,7 +33,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1",
-    "%Name":"spr_EmmaRoom",
+    "%Name":"JJ_Tower_TS",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -57,22 +57,22 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"spr_EmmaRoom",
+    "name":"JJ_Tower_TS",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",
     "seqHeight":192.0,
-    "seqWidth":256.0,
+    "seqWidth":192.0,
     "showBackdrop":true,
     "showBackdropImage":false,
     "timeUnits":1,
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"d9d97aeb-13c0-4bc7-bf1a-105d6b6b8fd4","path":"sprites/spr_EmmaRoom/spr_EmmaRoom.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"78c88df6-436b-478c-995a-f917ff870e0f","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"3a4f4fd8-9f30-4de7-88b7-7cb71b5cd12b","path":"sprites/JJ_Tower_TS/JJ_Tower_TS.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"3c6879ab-07d8-4352-89f3-feb781edfd86","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
@@ -88,5 +88,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":256,
+  "width":192,
 }
