@@ -30,4 +30,12 @@ if (xspd < 0) {face = LEFT};
 if (yspd < 0) {face = UP};
 if (yspd > 0) {face = DOWN};
 
+mask_index = sprite[DOWN];
 sprite_index = sprite[face];
+
+// animacao
+
+if(xspd == 0 && yspd == 0)
+{
+	image_index = 0;
+}
