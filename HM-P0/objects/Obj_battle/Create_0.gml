@@ -227,7 +227,7 @@ function BattleStateVictoryCheck()
 	
 	if (partyUnitsByHP[0].hp <= 0)
 	{
-		room_goto(Room2);
+		room_goto(Emma_Quarto);
 	}
 	
 	if (enemyUnitsByHP[0].hp <= 0)

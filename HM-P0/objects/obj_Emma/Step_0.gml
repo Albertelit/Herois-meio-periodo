@@ -6,6 +6,15 @@ down_key = keyboard_check(vk_down);
 xspd = (right_key - left_key) * move_speed;
 yspd = (down_key - up_key) * move_speed;
 
+
+//pausa o jogador
+
+if instance_exists(obj_pausa)
+	{
+	xspd = 0;
+	yspd = 0;
+	}
+
 //colisão
 
 if place_meeting(x + xspd, y, obj_parede) == true
@@ -39,3 +48,7 @@ if(xspd == 0 && yspd == 0)
 {
 	image_index = 0;
 }
+
+// profundidade
+
+depth = -bbox_bottom;

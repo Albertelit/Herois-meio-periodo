@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"JJ Torre",
-    "path":"folders/Sprites/JJ Torre.yy",
+    "name":"EmmaQuarto",
+    "path":"folders/Sprites/JJ Torre/EmmaQuarto.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
