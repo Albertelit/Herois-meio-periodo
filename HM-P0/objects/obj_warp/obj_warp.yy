@@ -10,8 +10,8 @@
   "name":"obj_warp",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objetos",
-    "path":"folders/Objetos.yy",
+    "name":"Menu e variados",
+    "path":"folders/Objetos/Menu e variados.yy",
   },
   "parentObjectId":null,
   "persistent":false,

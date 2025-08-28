@@ -1,7 +1,7 @@
-right_key = keyboard_check(vk_right);
-left_key = keyboard_check(vk_left);
-up_key = keyboard_check(vk_up);
-down_key = keyboard_check(vk_down);
+right_key = keyboard_check(vk_right) || keyboard_check(68);
+left_key = keyboard_check(vk_left) || keyboard_check(65);
+up_key = keyboard_check(vk_up) || keyboard_check(87);
+down_key = keyboard_check(vk_down) || keyboard_check(83);
 
 xspd = (right_key - left_key) * move_speed;
 yspd = (down_key - up_key) * move_speed;
@@ -52,3 +52,10 @@ if(xspd == 0 && yspd == 0)
 // profundidade
 
 depth = -bbox_bottom;
+
+//menu de pause
+
+if (keyboard_check_pressed(vk_escape))
+{
+	instance_create_depth(x, y, 99999999, obj_MenuPause);
+}
