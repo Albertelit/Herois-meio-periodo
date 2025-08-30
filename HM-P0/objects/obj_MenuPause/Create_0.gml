@@ -11,7 +11,8 @@ pos = 0;
 //opçoes disponiveis na caixa de titulo
 option[0, 0] = "Continuar jogo";
 option[0 ,1] = "Configuracoes";
-option[0, 2] = "Sair";
+option[0, 2] = "Menu principal";
+option[0, 3] = "Sair"
 
 // Menu configurações
 option[1, 0] = "Tamanho da janela"

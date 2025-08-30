@@ -57,5 +57,5 @@ depth = -bbox_bottom;
 
 if (keyboard_check_pressed(vk_escape))
 {
-	instance_create_depth(x, y, 99999999, obj_MenuPause);
+	instance_create_depth(x, y, -99999999, obj_MenuPause);
 }

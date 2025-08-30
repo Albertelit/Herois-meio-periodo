@@ -29,7 +29,7 @@
   "origin":4,
   "parent":{
     "name":"Emma spr",
-    "path":"folders/Sprites/Emma spr.yy",
+    "path":"folders/Sprites/PLAYER SPRITES/Emma spr.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

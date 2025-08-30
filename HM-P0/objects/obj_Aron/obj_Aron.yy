@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_parede",
+  "%Name":"obj_Aron",
   "eventList":[],
   "managed":true,
-  "name":"obj_parede",
+  "name":"obj_Aron",
   "overriddenProperties":[],
   "parent":{
     "name":"Objetos",
@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_parede",
-    "path":"sprites/spr_parede/spr_parede.yy",
+    "name":"spr_AronD",
+    "path":"sprites/spr_AronD/spr_AronD.yy",
   },
   "spriteMaskId":null,
   "visible":true,
