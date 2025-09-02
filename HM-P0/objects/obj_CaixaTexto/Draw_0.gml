@@ -15,20 +15,88 @@ if (setup == false)
 	//loop entre as paginas
 	for(var p = 0; p < page_number; p++)
 	{
+		
 		// guardas quantos caracteres tem em cada pagina e coloca esse valor no "text_lenght"
 		text_lenght[p] = string_length(text[p]);
 		
 		// pega a posição x da caixa de texto
 			// quando não tiver nenhum personagem falando (centraliza a caixa)
 			text_x_offset[p] = 44; 
+			
+			
+			
+		// colocando caracteres diferentes e encontrando onde quebrar linha
+		for (var c = 0; c < text_lenght[p]; c++)
+		{
+			
+			var _char_pos = c+1;
+			
+			// guarda caracteres individuais na Array "char"
+			char[c, p] = string_char_at(text[p], _char_pos);
+			
+			
+			// pega a largura atual da linha
+			var _txt_up_to_char = string_copy( text[p], 1, _char_pos );
+			var _current_txt_w = string_width( _txt_up_to_char ) - string_width( char[c, p] );
+			
+			//pega o ultimo espaço livre
+			if char[c, p] == " " { last_free_space = _char_pos+1 }
+			
+			// pega a quebra de linha
+			if _current_txt_w - line_break_offset[p] > line_width
+			{
+				line_break_pos[ line_break_num[p] + p ] = last_free_space;
+				line_break_num[p]++;
+				var _txt_up_to_last_space = string_copy( text[p], 1, last_free_space );
+				var _last_free_space_string = string_char_at( text[p], last_free_space );
+				line_break_offset[p] = string_width( _txt_up_to_last_space ) - string_width(_last_free_space_string);
+			}
+			
+			
+			
+		}
+		
+		// pegar cada cordenada
+		for (var c = 0; c < text_lenght[p]; c++)
+		{
+			
+			var _char_pos = c+1;
+			var _txt_x = texbox_x + text_x_offset[p] + border;
+			var _txt_y = texbox_y + border;
+			// pega a largura atual da linha
+			var _txt_up_to_char = string_copy(text[p], 1, _char_pos);
+			var _current_txt_w = string_width(_txt_up_to_char) - string_width(char[c, p]);
+			var _txt_line = 0;
+				
+			
+			// compensar pelas linhas quebradas 
+			for (var lb = 0; lb < line_break_num[p]; lb++)
+			{
+				// se o caractere loopado e depois de uma queba de linha
+				if _char_pos >= line_break_pos[p]
+				{
+					var _str_copy = string_copy( text[p], line_break_pos[p], _char_pos-line_break_pos[p] );
+					_current_txt_w = string_width( _str_copy );
+						
+					//pega a "linha" que esse caractere deve ficar
+					_txt_line = lb+1; //+1 pq já começa do zero
+				}
+			}
+				
+			//Adiciona as coordenadas x e y, baseada na nova informação
+			char_x[c, p] = _txt_x + _current_txt_w;
+			char_y[c, p] = _txt_y + _txt_line*line_sep;
+		}
 	}
 }
+
+
 
 // ...........................Digitar o texto..................................//
 if (draw_char < text_lenght[page])
 {	
 	draw_char += text_speed;
-	draw_char = clamp(draw_char, 0, text_lenght[page])
+	draw_char = clamp(draw_char, 0, text_lenght[page]);
 }
 
 
@@ -105,8 +173,11 @@ if (draw_char == text_lenght[page]) && page == page_number -1
 }
 
 
-
-
 // ..........................Desenhar o Texto..................................//
-var _drawtext = string_copy(text[page], 1, draw_char);
-draw_text_ext(_txtb_x + border, _txtb_y + border, _drawtext, line_sep, line_width);
+for(var c = 0; c < draw_char; c++)
+{
+	
+	// o texto
+	draw_text(char_x[c, page], char_y[c, page], char[c, page]);
+	
+}

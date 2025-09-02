@@ -1,4 +1,4 @@
-depth = -999999999999
+depth = -999999;
 
 // Tamanho da caixa de texto
 textbox_width = 200;
@@ -25,6 +25,9 @@ page = 0;
 page_number = 0;
 text[0] = "";
 text_lenght  = string_length(text[0]);
+char[0, 0] = ""; // numero de caracteres em uma pagina (pra quebrar texto)
+char_x[0, 0] = 0;
+char_y[0, 0] = 0;
 draw_char = 0; // quantos caracteres foram digitados (efeito de digitação)
 text_speed = 1;
 
@@ -34,6 +37,10 @@ option[0] = "";
 option_link_id[0] = -1;
 option_pos = 0;
 option_number = 0;
+
+// Efeitos
+src_set_default_for_text();
+last_free_space = 0;
 
 
 setup = false;

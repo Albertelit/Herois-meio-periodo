@@ -1,9 +1,17 @@
 var _option = "";
 var _link_id = "";
 
+function src_set_default_for_text()
+{
+	line_break_pos[0, page_number] = 0;
+	line_break_num[page_number] = 0;
+	line_break_offset[page_number] = 0;
+}
+
 /// @param text
 function scr_text(_text)
 {
+	src_set_default_for_text()
 	text[page_number] = _text;
 	page_number++;
 }
