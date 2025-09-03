@@ -8,8 +8,8 @@
   "name":"oBattleEffect",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objetos",
-    "path":"folders/Objetos.yy",
+    "name":"Batalhas",
+    "path":"folders/Objetos/Batalhas.yy",
   },
   "parentObjectId":null,
   "persistent":false,

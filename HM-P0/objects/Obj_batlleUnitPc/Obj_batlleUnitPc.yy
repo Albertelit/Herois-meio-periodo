@@ -8,8 +8,8 @@
   "name":"Obj_batlleUnitPc",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objetos",
-    "path":"folders/Objetos.yy",
+    "name":"Batalhas",
+    "path":"folders/Objetos/Batalhas.yy",
   },
   "parentObjectId":{
     "name":"Obj_battleUnit",

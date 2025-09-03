@@ -8,9 +8,22 @@ turnCount = 0;
 roundCount = 0;
 battleWaitTimeFrames = 30;
 battleWaitTimeRemaining = 0;
+battleText = "";
 currentUser = noone;
 currentAction = -1;
 currentTargets = noone;
+
+cursor =
+{
+    activeUser: noone,
+    activeTarget: noone,
+    activeAction : -1,
+    targetSide : -1,
+    targetIndex : 0,
+    targetAll : false,
+    confirmDelay : 0,
+    active : false
+};
 
 
 //criar inimigos
@@ -120,6 +133,7 @@ function BeginAction(_user, _action, _targets)
     currentUser = _user;
     currentAction = _action;
     currentTargets = _targets;
+	battleText = string_ext(_action.description, [_user.nome])
     if (!is_array(currentTargets)) currentTargets = [currentTargets];
     battleWaitTimeRemaining = battleWaitTimeFrames;
     with (_user)
@@ -188,12 +202,52 @@ else //wait for delay and then end the turn
 
 function BattleStateVictoryCheck()
 {
+	RefreshPartyHealthOrder = function()
+	{
+		partyUnitsByHP = []
+		array_copy(partyUnitsByHP, 0, partyUnits, 0, array_length(partyUnits));
+		array_sort(partyUnitsByHP, function(_1, _2)
+		{
+			return _2.hp - _1.hp;
+		});
+	};
+	
+	RefreshPartyHealthOrder();
+	
+	RefreshEnemyHealthOrder = function()
+	{
+		enemyUnitsByHP = []
+		array_copy(enemyUnitsByHP, 0, enemyUnits, 0, array_length(enemyUnits));
+		array_sort(enemyUnitsByHP, function(_1, _2)
+		{
+			return _2.hp - _1.hp;
+		});
+	};
+	RefreshEnemyHealthOrder();
+	
+	if (partyUnitsByHP[0].hp <= 0)
+	{
+		room_goto(Emma_Quarto);
+	}
+	
+	if (enemyUnitsByHP[0].hp <= 0)
+	{
+		for (var i = 0; i < array_length(global.party); i++)
+		{
+			global.party[i].hp = partyUnits[i].hp
+		}
+		instance_activate_all();
+		instance_destroy(creator);
+		instance_destroy();
+	}
+	
 	battleState = BattleStateTurnProgression;
 }
 
 function BattleStateTurnProgression()
 {
-	turnCount++;
+	battleText = ""; // reseta o texto da batalha
+	turnCount++; // contagem de turnos
 	turn++;
 	//loop
 	if (turn > array_length(unitTurnOrder) - 1)
