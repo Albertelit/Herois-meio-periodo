@@ -55,12 +55,12 @@ enum MODE
 global.party = [
 	{
 		nome: "Emma", // 0
-		hp: 30,
-		hpMax: 25,
+		hp: 555,
+		hpMax: 5,
 		pm: 0,
 		pmMax: 6,
-		poder: 999,
-		perigo: 1, //não esqueça que os personagens vão ter perigo para serem focados
+		poder: 1,
+		perigo: 2, //não esqueça que os personagens vão ter perigo para serem focados
 		sprites: {idle: spr_EmmaD, attack: spr_EmmaD, defend: spr_EmmaD, down: spr_carteira},
 		actions: [global.actionLibrary.attack, global.actionLibrary.Taser]
 		},
@@ -71,8 +71,8 @@ global.party = [
 		hpMax: 30,
 		pm: 0,
 		pmMax: 6,
-		poder: 999,
-		perigo: 1, //não esqueça que os personagens vão ter perigo para serem focados
+		poder: 5,
+		perigo: 4, //não esqueça que os personagens vão ter perigo para serem focados
 		sprites: {idle: spr_EmmaD, attack: spr_EmmaD, defend: spr_EmmaD, down: spr_EmmaL},
 		actions: [global.actionLibrary.attack]
 		},
@@ -83,7 +83,7 @@ global.party = [
 		hpMax: 20,
 		pm: 0,
 		pmMax: 6,
-		poder: 999,
+		poder: 1,
 		perigo: 1, //não esqueça que os personagens vão ter perigo para serem focados
 		sprites: {idle: spr_EmmaD, attack: spr_EmmaD, defend: spr_EmmaD, down: spr_EmmaR},
 		actions: [global.actionLibrary.attack]
@@ -95,7 +95,7 @@ global.party = [
 		hpMax: 20,
 		pm: 0,
 		pmMax: 6,
-		poder: 999,
+		poder: 1,
 		perigo: 1, //não esqueça que os personagens vão ter perigo para serem focados
 		sprites: {idle: spr_EmmaD, attack: spr_EmmaD, defend: spr_EmmaD, down: spr_EmmaU},
 		actions: [global.actionLibrary.attack]
@@ -117,16 +117,37 @@ global.enemies = [
         actions: [global.actionLibrary.attack],
         AIscript: function() 
 		{
-            // atacar player aleatório
-			var _action = actions[0];
-			var _possibleTargets = array_filter(Obj_battle.partyUnits, function(_unit, _index)
-			{
-			 return (_unit.hp > 0);
-			});
-			var _targets = _possibleTargets[irandom(array_length(_possibleTargets)-1)];
-			return [_action, _targets];
-		}
+    var _action = actions[0];
+    var _possibleTargets = array_filter(Obj_battle.partyUnits, function(_unit, _index)
+    {
+        return (_unit.hp > 0);
+    });
+
+    if (array_length(_possibleTargets) <= 0) return undefined;
+
+    var totalPerigo = 0;
+    for (var i = 0; i < array_length(_possibleTargets); i++)
+    {
+        totalPerigo += _possibleTargets[i].perigo;
     }
+
     
-    // Outros inimigos podem ser adicionados aqui
-];
+    var sorteio = irandom_range(1, totalPerigo);
+
+    var acumulado = 0;
+    var _target = _possibleTargets[0]; 
+
+    for (var i = 0; i < array_length(_possibleTargets); i++)
+    {
+        acumulado += _possibleTargets[i].perigo;
+        if (sorteio <= acumulado)
+        {
+            _target = _possibleTargets[i];
+            break;
+        }
+    }
+
+    // retorna ação + alvo
+    return [_action, _target];
+		}
+	},
