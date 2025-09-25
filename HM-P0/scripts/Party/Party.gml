@@ -10,7 +10,7 @@ global.actionLibrary =
         targetRequired : true,
         targetEnemyByDefault : true,
         targetAll : MODE.NEVER,
-        Tacao: ATACK.INIMIGO,
+		Atack:	ACAO.INIMIGO,
         userAnimation : "attack",
         effectSprite : sAttackBonk,
         effectOnTarget : MODE.ALWAYS,
@@ -29,7 +29,7 @@ global.actionLibrary =
         targetRequired : true,
         targetEnemyByDefault : true, //0: party/self
         targetAll : MODE.NEVER,
-        Tacao: ATACK.INIMIGO,
+		Atack: ACAO.INIMIGO,
         userAnimation : "attack",
         effectSprite : sAttackIce,
         effectOnTarget : MODE.ALWAYS,
@@ -45,16 +45,15 @@ global.actionLibrary =
 
 enum MODE
 {
- INIMIGO = 0,
- ALIADO = 1,
- PROPRIO = 2
-}
-
-enum ATACK
-{
  NEVER = 0,
  ALWAYS = 1,
  VARIES = 2
+}
+enum ACAO
+{
+INIMIGO = 0,
+ALIADO = 1,
+PROPRIO =2,
 }
 
 
