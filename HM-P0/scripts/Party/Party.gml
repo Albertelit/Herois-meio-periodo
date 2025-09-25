@@ -10,16 +10,23 @@ global.actionLibrary =
         targetRequired : true,
         targetEnemyByDefault : true,
         targetAll : MODE.NEVER,
-		Atack:	ACAO.INIMIGO,
+        Atack: ACAO.INIMIGO,
         userAnimation : "attack",
         effectSprite : sAttackBonk,
         effectOnTarget : MODE.ALWAYS,
         func : function(_user, _targets)
         {
-            var _damage = ceil(_user.poder + random_range(-_user.poder * 0.25, _user.poder * 0.25));
-            BattleChangeHP(_targets[0], -_damage, 0);
+            var _target = _targets[0]; // <- pega o primeiro alvo
+            var _damage = ceil((_user.poder + random_range(-_user.poder * 0.25, _user.poder * 0.25)) - _target.defesa);
+            
+            if (_damage < 1) { 
+                _damage = _user.poder; // <- aqui também corrigi "user" para "_user"
+            }
+            
+            BattleChangeHP(_target, -_damage, 0);
         }
     },
+
 	Taser : // sim eu sei, e meio paia, mas deixa funfar primeiro e dps troco
 	{
 		name : "Taser", //1
@@ -35,12 +42,37 @@ global.actionLibrary =
         effectOnTarget : MODE.ALWAYS,
         func : function(_user, _targets)
         {
+			var _target = _targets[0]; // <- pega o primeiro alvo
+            var _damage = ceil((_user.int + random_range(-_user.int * 0.25, _user.int * 0.25)) - _target.defesa);
+            
+            if (_damage < _user.int) { 
+                _damage = _user.int; // <- aqui também corrigi "user" para "_user"
+            }
+            
+            BattleChangeHP(_target, -_damage, 0);
+        }
+	},
+	cura : // mais paia ainda
+	{
+		name : "cura sanguinea", // texto sai da caixa, concertar tamanho
+        description : "cura um aliado!",
+        subMenu : "Magic",
+		pmCost : 2,
+        targetRequired : true,
+        targetEnemyByDefault : true, //0: party/self
+        targetAll : MODE.NEVER,
+		Atack: ACAO.ALIADO,
+        userAnimation : "attack",
+        effectSprite : sAttackCure,
+        effectOnTarget : MODE.ALWAYS,
+        func : function(_user, _targets)
+        {
 			// dano levemente fixo, arrumo dps pra depender de Poder
-            var _damage = irandom_range(10,20);
+            var _damage = irandom_range(-10,-20);
 			BattleChangeHP( _targets[0], - _damage);
 			// custo vira dps, poe enquanto nao desconta
         }
-	}
+	},
 };
 
 enum MODE
@@ -57,8 +89,6 @@ PROPRIO =2,
 }
 
 
-
-
 // party data
 
 global.party = [
@@ -66,9 +96,11 @@ global.party = [
 		nome: "Emma", // 0
 		hp: 555,
 		hpMax: 5,
+		defesa: 2,
 		pm: 0,
 		pmMax: 6,
 		poder: 1,
+		int: 4,
 		perigo: 2, //não esqueça que os personagens vão ter perigo para serem focados
 		sprites: {idle: spr_EmmaD, attack: spr_EmmaD, defend: spr_EmmaD, down: spr_carteira},
 		actions: [global.actionLibrary.attack, global.actionLibrary.Taser]
@@ -80,7 +112,9 @@ global.party = [
 		hpMax: 30,
 		pm: 0,
 		pmMax: 6,
-		poder: 5,
+		poder: 4,
+		defesa: 2,
+		int: 2,
 		perigo: 4, //não esqueça que os personagens vão ter perigo para serem focados
 		sprites: {idle: spr_EmmaD, attack: spr_EmmaD, defend: spr_EmmaD, down: spr_EmmaL},
 		actions: [global.actionLibrary.attack]
@@ -92,7 +126,9 @@ global.party = [
 		hpMax: 20,
 		pm: 0,
 		pmMax: 6,
-		poder: 1,
+		poder: 2,
+		defesa: 2,
+		int: 8,
 		perigo: 1, //não esqueça que os personagens vão ter perigo para serem focados
 		sprites: {idle: spr_EmmaD, attack: spr_EmmaD, defend: spr_EmmaD, down: spr_EmmaR},
 		actions: [global.actionLibrary.attack]
@@ -104,10 +140,12 @@ global.party = [
 		hpMax: 20,
 		pm: 0,
 		pmMax: 6,
-		poder: 1,
+		poder: 2,
+		defesa: 2,
+		int: 4,
 		perigo: 1, //não esqueça que os personagens vão ter perigo para serem focados
 		sprites: {idle: spr_EmmaD, attack: spr_EmmaD, defend: spr_EmmaD, down: spr_EmmaU},
-		actions: [global.actionLibrary.attack]
+		actions: [global.actionLibrary.attack,global.actionLibrary.cura]
 		}
 	
 ]
@@ -122,6 +160,7 @@ global.enemies = [
         pm: 6,
         pmMax: 6,
         poder: 4,
+		defesa: 2,
         sprites: {idle: sBat, attack: spr_parede, defend: spr_parede, down: spr_parede},
         actions: [global.actionLibrary.attack],
         AIscript: function() 
@@ -132,7 +171,7 @@ global.enemies = [
         return (_unit.hp > 0);
     });
 
-    if (array_length(_possibleTargets) <= 0) return undefined;
+    
 
     var totalPerigo = 0;
     for (var i = 0; i < array_length(_possibleTargets); i++)
@@ -156,6 +195,11 @@ global.enemies = [
         }
     }
 
+    // retorna ação + alvo
+    return [_action, _target];
+		}
+	},
+]
     // retorna ação + alvo
     return [_action, _target];
 		}
