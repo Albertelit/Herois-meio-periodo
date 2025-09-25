@@ -22,8 +22,8 @@ if (cursor.active)
 		var _moveH = _keyRigth - _keyLeft;
 		var _moveV = _keyDown - _keyUp;
 		
-		if (_moveH == -1) targetSide = Obj_battle.partyUnits;
-		if (_moveH == 1) targetSide = Obj_battle.enemyUnits;
+		if (activeAction.Atack = ACAO.ALIADO) targetSide = Obj_battle.partyUnits;
+		if (activeAction.Atack = ACAO.INIMIGO) targetSide = Obj_battle.enemyUnits;
 		
 		
 		if (targetSide == Obj_battle.enemyUnits)
