@@ -91,7 +91,6 @@ if (setup == false)
 }
 
 
-
 // ...........................Digitar o texto..................................//
 if (draw_char < text_lenght[page])
 {	
@@ -133,15 +132,14 @@ if accept_key
 }
 
 
-
 // ..........................Desenhar a caixa de texto.........................//
 var _txtb_x = texbox_x + text_x_offset[page];
 var _txtb_y = texbox_y;
 txtb_img += txt_img_spd;
-txtb_spr_w = sprite_get_width(txtb_spr);
-txtb_spr_h = sprite_get_height(txtb_spr);
+txtb_spr_w = sprite_get_width(txtb_spr[page]);
+txtb_spr_h = sprite_get_height(txtb_spr[page]);
 
-draw_sprite_ext(txtb_spr, txtb_img, _txtb_x, _txtb_y, textbox_width/txtb_spr_w, textbox_height/txtb_spr_h, 0, c_white, 1);
+draw_sprite_ext(txtb_spr[page], txtb_img, _txtb_x, _txtb_y, textbox_width/txtb_spr_w, textbox_height/txtb_spr_h, 0, c_white, 1);
 
 
 
@@ -159,7 +157,7 @@ if (draw_char == text_lenght[page]) && page == page_number -1
 	{
 		//caixinha de opções
 		var _o_w = string_width(option[op]) + _op_bord * 2;
-		draw_sprite_ext(txtb_spr, txtb_img, _txtb_x + 16, _txtb_y - _op_space*option_number + _op_space*op, _o_w/txtb_spr_w, (_op_space-1)/txtb_spr_h, 0, c_white, 1);
+		draw_sprite_ext(txtb_spr[page], txtb_img, _txtb_x + 16, _txtb_y - _op_space*option_number + _op_space*op, _o_w/txtb_spr_w, (_op_space-1)/txtb_spr_h, 0, c_white, 1);
 		
 		// A setinha
 		if (option_pos == op)

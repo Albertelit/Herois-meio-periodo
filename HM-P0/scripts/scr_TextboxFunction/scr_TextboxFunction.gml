@@ -6,6 +6,10 @@ function src_set_default_for_text()
 	line_break_pos[0, page_number] = 0;
 	line_break_num[page_number] = 0;
 	line_break_offset[page_number] = 0;
+	
+	txtb_spr[page_number] = spr_menu;
+	speaker_sprite[page_number] = noone;
+	speaker_side[page_number] = 1;
 }
 
 /// @param text

@@ -6,7 +6,7 @@ textbox_height = 64;
 border = 8;
 line_sep = 12;
 
-txtb_spr = spr_menu;
+txtb_spr[0] = spr_menu;
 txtb_img = 0;
 txt_img_spd = 6/60;
 txtb_spr_w = 0;
