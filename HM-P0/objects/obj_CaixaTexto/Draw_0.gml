@@ -20,8 +20,23 @@ if (setup == false)
 		text_lenght[p] = string_length(text[p]);
 		
 		// pega a posição x da caixa de texto
+			// personagem na esquerda:
+			if speaker_side[p] == 1
+			{
+			text_x_offset[p] = 80;
+			portrait_x_offset[p] = 8;
+			}
+			//personagem na direita:
+			if speaker_side[p] == -1 
+			{
+				text_x_offset[p] = 8;
+				portrait_x_offset[p] = 214;
+			}
 			// quando não tiver nenhum personagem falando (centraliza a caixa)
-			text_x_offset[p] = 44; 
+			if speaker_side[p] == noone 
+			{
+				text_x_offset[p] = 44;
+			}
 			
 			
 			
@@ -92,13 +107,24 @@ if (setup == false)
 
 
 // ...........................Digitar o texto..................................//
-if (draw_char < text_lenght[page])
-{	
-	draw_char += text_speed;
-	draw_char = clamp(draw_char, 0, text_lenght[page]);
+if text_pause_timer <= 0 
+{
+	if (draw_char < text_lenght[page])
+	{	
+		draw_char += text_speed;
+		draw_char = clamp(draw_char, 0, text_lenght[page]);
+	}
+	
+		var _check_char = string_char_at( text[page], draw_char);
+		if _check_char == "." || _check_char == "!" || _check_char == "?" || _check_char == ","
+		{	
+			text_pause_timer = text_pause_time;
+		}
 }
-
-
+else
+{
+	text_pause_timer--;
+}
 // ..........................Trocar de paginas.................................//
 if accept_key
 {
@@ -138,6 +164,19 @@ var _txtb_y = texbox_y;
 txtb_img += txt_img_spd;
 txtb_spr_w = sprite_get_width(txtb_spr[page]);
 txtb_spr_h = sprite_get_height(txtb_spr[page]);
+// Desenhar o falante
+if speaker_sprite[page] != noone
+{
+	sprite_index = speaker_sprite[page];
+	if draw_char == text_lenght[page] {image_index = 0};
+	var _speaker_x = texbox_x + portrait_x_offset[page];
+	
+	if speaker_side[page] == -1 {_speaker_x += sprite_width};
+	
+	// Desenhar o falante (codigo não 100% funcional)
+	draw_sprite_ext(txtb_spr[page], txtb_img, texbox_x + portrait_x_offset[page], texbox_y, sprite_width/txtb_spr_w, sprite_width/txtb_spr_h, 0, c_white, 1);
+	draw_sprite_ext(sprite_index, image_index, _speaker_x, texbox_y - 4 , speaker_side[page], 1, 0, c_white, 1);
+}
 
 draw_sprite_ext(txtb_spr[page], txtb_img, _txtb_x, _txtb_y, textbox_width/txtb_spr_w, textbox_height/txtb_spr_h, 0, c_white, 1);
 

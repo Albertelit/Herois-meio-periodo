@@ -11,6 +11,8 @@ txtb_img = 0;
 txt_img_spd = 6/60;
 txtb_spr_w = 0;
 txtb_spr_h = 0;
+portrait_x_offset = [];
+
 
 // tamanho maximo de uma linha de texto
 line_width = textbox_width - border * 2;
@@ -41,6 +43,8 @@ option_number = 0;
 // Efeitos
 src_set_default_for_text();
 last_free_space = 0;
+text_pause_timer = 0;
+text_pause_time = 16;
 
 
 setup = false;

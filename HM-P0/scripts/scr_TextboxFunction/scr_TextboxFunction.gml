@@ -10,15 +10,61 @@ function src_set_default_for_text()
 	txtb_spr[page_number] = spr_menu;
 	speaker_sprite[page_number] = noone;
 	speaker_side[page_number] = 1;
+	snd[page_number] = Animal_Crossing;
 }
 
+
+
+
 /// @param text
+/// @param [portrait]
+/// @param [side]
 function scr_text(_text)
 {
 	src_set_default_for_text()
+	
 	text[page_number] = _text;
+	
+	// pegar informações do personagem
+	if argument_count > 1
+	{
+		switch (argument[1])
+		{
+			case "Emma J":
+				speaker_sprite[page_number] = spr_Eneutro;
+				txtb_spr[page_number] = spr_Emenu;
+				snd[page_number] = Animal_Crossing;
+			break;
+			case "Emma J Feliz":
+				speaker_sprite[page_number] = spr_EFeliz;
+				txtb_spr[page_number] = spr_Emenu;
+				snd[page_number] = Animal_Crossing;
+			break;
+			
+			case "Aron L":
+				speaker_sprite[page_number] = spr_Aneutro;
+				txtb_spr[page_number] = spr_Amenu;
+				snd[page_number] = Animal_Crossing;
+			break;
+			case "Aron L Feliz":
+				speaker_sprite[page_number] = spr_Afeliz;
+				txtb_spr[page_number] = spr_Amenu;
+				snd[page_number] = Animal_Crossing;
+			break;
+		}
+	}
+	// lado em que está o personagem
+	if argument_count > 2
+	{
+		speaker_side[page_number] = argument[2];
+	}
+	
 	page_number++;
+	
 }
+
+
+
 
 /// @param option
 /// @param link_id
@@ -28,6 +74,9 @@ function src_options(_option, _link_id)
 	option_link_id[option_number] = _link_id;
 	option_number++;
 }
+
+
+
 
 /// @param text_id
 function create_textbox(_text_id)
