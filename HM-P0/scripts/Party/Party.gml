@@ -23,7 +23,8 @@ global.actionLibrary =
                 _damage = _user.poder; // <- aqui também corrigi "user" para "_user"
             }
             
-            BattleChangeHP(_target, -_damage, 0);
+           BattleChangeHP(_user, _target, -_damage, 0, 0);
+;
         }
     },
 
@@ -49,7 +50,7 @@ global.actionLibrary =
                 _damage = _user.int; // <- aqui também corrigi "user" para "_user"
             }
             
-            BattleChangeHP(_target, -_damage, 0);
+            BattleChangeHP(_user, _target, -_damage, 2, 0);
         }
 	},
 	cura : // mais paia ainda
@@ -65,13 +66,12 @@ global.actionLibrary =
         userAnimation : "attack",
         effectSprite : sAttackCure,
         effectOnTarget : MODE.ALWAYS,
-        func : function(_user, _targets)
-        {
-			// dano levemente fixo, arrumo dps pra depender de Poder
-            var _damage = irandom_range(-10,-20);
-			BattleChangeHP( _targets[0], - _damage);
-			// custo vira dps, poe enquanto nao desconta
-        }
+        func: function(_user, _targets)
+{
+    var _heal = irandom_range(10, 20);
+    BattleChangeHP(_user, _targets[0], _heal, 2, 0);
+}
+
 	},
 };
 
