@@ -20,8 +20,6 @@ function BattleChangeHP(_user, _target, _amount, _pmCost, AliveDeadOrEither = 0)
     // Verifica se o usuário tem PM suficiente
     if (_user.pm < _pmCost)
     {
-        
-        _failed = true;
 
         // Texto de falha
         instance_create_depth(
