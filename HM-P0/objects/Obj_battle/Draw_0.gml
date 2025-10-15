@@ -1,5 +1,9 @@
+var _largura = camera_get_view_width(view_camera[0]);
+var _altura = camera_get_view_height(view_camera[0]);
+
+
 //backgrund arte
-draw_sprite_stretched(sBgField, 0,x,y,320,240);
+draw_sprite_stretched(sBgField, 0,x,y,_largura, _altura);
 
 //desenhar units na ordem de profundidade
 var _unitWithCurrentTurn = unitTurnOrder[turn].id;

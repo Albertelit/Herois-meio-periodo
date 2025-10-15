@@ -1,4 +1,4 @@
-if place_meeting(x, y, obj_Emma) && !instance_exists(obj_trasisao)
+if place_meeting(x, y, obj_Emma) && !instance_exists(obj_trasisao) && keyboard_check_pressed(vk_enter)
 	{
 	var inst = instance_create_depth(0, 0, -9999, obj_trasisao);
 	inst.target_x = target_x;

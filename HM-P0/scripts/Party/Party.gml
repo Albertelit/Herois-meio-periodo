@@ -30,7 +30,7 @@ global.actionLibrary =
 
 	Taser : // sim eu sei, e meio paia, mas deixa funfar primeiro e dps troco
 	{
-		name : "Taser", //1
+		name : "Taser - 2 PM", //1
         description : "{0} Eletrecuta!",
         subMenu : "Magic",
 		pmCost : 2,
@@ -55,8 +55,8 @@ global.actionLibrary =
 	},
 	cura : // mais paia ainda
 	{
-		name : "cura sanguinea", // texto sai da caixa, concertar tamanho
-        description : "cura um aliado!",
+		name : "Cicatrizar", // texto sai da caixa, concertar tamanho
+        description : "{0} cura um aliado!",
         subMenu : "Magic",
 		pmCost : 2,
         targetRequired : true,
@@ -97,12 +97,12 @@ global.party = [
 		hp: 555,
 		hpMax: 5,
 		defesa: 2,
-		pm: 0,
+		pm: 6,
 		pmMax: 6,
 		poder: 1,
 		int: 4,
 		perigo: 2, //não esqueça que os personagens vão ter perigo para serem focados
-		sprites: {idle: spr_EmmaD, attack: spr_EmmaD, defend: spr_EmmaD, down: spr_carteira},
+		sprites: {idle: spr_EmmaD, attack: spr_EmmaR, defend: spr_EmmaD, down: spr_carteira},
 		actions: [global.actionLibrary.attack, global.actionLibrary.Taser]
 		},
 		
@@ -116,7 +116,7 @@ global.party = [
 		defesa: 2,
 		int: 2,
 		perigo: 4, //não esqueça que os personagens vão ter perigo para serem focados
-		sprites: {idle: spr_EmmaD, attack: spr_EmmaD, defend: spr_EmmaD, down: spr_EmmaL},
+		sprites: {idle: spr_AronD, attack: spr_EmmaD, defend: spr_EmmaD, down: spr_EmmaL},
 		actions: [global.actionLibrary.attack]
 		},
 		
@@ -138,13 +138,13 @@ global.party = [
 		nome: "Anniela", // 3
 		hp: 20,
 		hpMax: 20,
-		pm: 0,
+		pm: 6,
 		pmMax: 6,
 		poder: 2,
 		defesa: 2,
 		int: 4,
 		perigo: 1, //não esqueça que os personagens vão ter perigo para serem focados
-		sprites: {idle: spr_EmmaD, attack: spr_EmmaD, defend: spr_EmmaD, down: spr_EmmaU},
+		sprites: {idle: spr_AnniD, attack: spr_AnniR, defend: spr_AnniR, down: spr_AnniD},
 		actions: [global.actionLibrary.attack,global.actionLibrary.cura]
 		}
 	

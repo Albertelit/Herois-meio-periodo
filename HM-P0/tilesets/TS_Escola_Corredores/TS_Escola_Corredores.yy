@@ -3,12 +3,16 @@
   "%Name":"TS_Escola_Corredores",
   "autoTileSets":[],
   "macroPageTiles":{
-    "SerialiseHeight":0,
-    "SerialiseWidth":0,
-    "TileSerialiseData":[],
+    "SerialiseHeight":9,
+    "SerialiseWidth":7,
+    "TileCompressedData":[
+      -2,0,3,4,5,6,-4,0,3,11,12,13,-4,0,3,18,0,20,-10,0,8,1,2,0,0,2,3,0,8,-4,0,1,10,-8,0,1,8,-4,0,8,10,0,15,
+      16,0,0,16,17,
+    ],
+    "TileDataFormat":1,
   },
   "name":"TS_Escola_Corredores",
-  "out_columns":4,
+  "out_columns":7,
   "out_tilehborder":2,
   "out_tilevborder":2,
   "parent":{
@@ -34,5 +38,5 @@
   "tileWidth":32,
   "tilexoff":0,
   "tileyoff":0,
-  "tile_count":20,
+  "tile_count":49,
 }

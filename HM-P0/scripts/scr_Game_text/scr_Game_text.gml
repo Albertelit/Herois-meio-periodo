@@ -16,15 +16,9 @@ function scr_Game_text(_text_id)
 				scr_text("...", "Aron L");
 				scr_text("e tem razao, vou tentar mais um pouco.", "Aron L");
 			break;
-		
-		case "P0ISON":
-			scr_text("Estou com uma leve vontade de te morder agora");
-			scr_text("apenas leve, entao nao se preucupe");
-		break;
-		
-		case "Aniella":
-			scr_text("ai");
-			scr_text("oque? queria mais dialogo?");
+		case "Emma PC":
+			scr_text("Meu Pc... ja me ajudou em muita coisa.", "Emma J Feliz");
+			scr_text("Adeus Morto ao amanhecer, iremos nos ver um dia", "Emma J");
 		break;
 	}	
 }

@@ -9,8 +9,8 @@
   "name":"obj_Emma",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objetos",
-    "path":"folders/Objetos.yy",
+    "name":"OBJ_Player",
+    "path":"folders/Objetos/OBJ_Player.yy",
   },
   "parentObjectId":null,
   "persistent":true,

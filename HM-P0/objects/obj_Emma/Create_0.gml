@@ -1,7 +1,7 @@
 xspd = 0;
 yspd = 0;
 
-move_speed = 4;
+move_speed = 3;
 
 sprite[RIGHT] = spr_EmmaR;
 sprite[UP] = spr_EmmaU;

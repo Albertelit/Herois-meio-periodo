@@ -86,3 +86,11 @@ function create_textbox(_text_id)
 		scr_Game_text(_text_id);
 	}
 }
+
+function interagir_texto()
+{
+	if place_meeting(x, y, obj_Emma) && keyboard_check_pressed(vk_enter)
+	{
+		create_textbox(text_id);
+	}
+}
