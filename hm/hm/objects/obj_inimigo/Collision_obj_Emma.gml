@@ -1,0 +1,1 @@
+NewEncounter([global.enemies[0], global.enemies[0], global.enemies[0], global.enemies[0],  global.enemies[0] ], Spr_inimigo);

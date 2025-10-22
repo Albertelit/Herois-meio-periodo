@@ -1,0 +1,115 @@
+var _largura = camera_get_view_width(view_camera[0]);
+var _altura = camera_get_view_height(view_camera[0]);
+
+
+//backgrund arte
+draw_sprite_stretched(sBgField, 0,x,y,_largura, _altura);
+
+//desenhar units na ordem de profundidade
+var _unitWithCurrentTurn = unitTurnOrder[turn].id;
+for (var i = 0; i < array_length(unitRenderOrder); i++)
+{
+with (unitRenderOrder[i])
+{
+	draw_self()
+}
+
+}
+
+// ui box uwu
+draw_sprite_stretched(sBox,0,x+75,y+160,245,80);
+draw_sprite_stretched(sBox,0,x,y+160,74,80);
+
+//Positions
+#macro COLUMN_ENEMY 15
+#macro COLUMN_NAME 90
+#macro COLUMN_HP 160
+#macro COLUMN_MP 220
+
+//Draw headings
+draw_set_font(fnM3x6);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+draw_set_color(c_gray);
+draw_text(x+COLUMN_ENEMY, y+160, "ENEMY");
+draw_text(x+COLUMN_NAME,  y+160, "NAME");
+draw_text(x+COLUMN_HP,    y+160, "HP");
+draw_text(x+COLUMN_MP,    y+160, "MP");
+
+//Draw enemy names
+draw_set_font(fnOpenSansPX);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+draw_set_color(c_white);
+var _drawLimit = 5;
+var _drawn = 0;
+for (var i = 0; (i < array_length(enemyUnits)) && (_drawn < _drawLimit); i++)
+{
+    var _char = enemyUnits[i];
+    if (_char.hp > 0)
+    {
+        _drawn++;
+        draw_set_halign(fa_left);
+        draw_set_color(c_white);
+        if (_char.id == _unitWithCurrentTurn) draw_set_color(c_yellow);
+        draw_text(x+COLUMN_ENEMY, y+170+(i*12), _char.nome);
+    }
+}
+
+//
+for (var i = 0; i < array_length(partyUnits); i++)
+{
+    draw_set_halign(fa_left);
+    draw_set_color(c_white);
+    var _char = partyUnits[i];
+    if (_char.id == _unitWithCurrentTurn) draw_set_color(c_yellow);
+    if (_char.hp <= 0) draw_set_color(c_red);
+    draw_text(x+COLUMN_NAME, y+170+(i*12), _char.nome);
+    draw_set_halign(fa_right);
+
+    draw_set_color(c_white);
+    if (_char.hp / _char.hpMax < 0.5) draw_set_color(c_orange);
+    if (_char.hp <= 0) draw_set_color(c_red);
+    draw_text(x+COLUMN_HP+50, y+170+(i*12), string(_char.hp) + "/" + string(_char.hpMax));
+
+    draw_set_color(c_white);
+    if (_char.pm / _char.pmMax < 0.5) draw_set_color(c_orange);
+    if (_char.pm <= 0) draw_set_color(c_red);
+    draw_text(x+COLUMN_MP+50, y+170+(i*12), string(_char.pm) + "/" + string(_char.pmMax));
+    draw_set_color(c_white);
+}
+
+
+
+if (cursor.active)
+{
+	with (cursor)
+	{
+		if (activeTarget != noone)
+		{
+			if (!is_array(activeTarget))
+			{
+				draw_sprite(sPointer,0,activeTarget.x,activeTarget.y);
+			}
+			else
+			{
+				draw_set_alpha(sin(get_time()/5000)+1);
+				for (var i = 0; i < array_length(activeTarget); i++)
+				{
+					draw_sprite(sPointer,0,activeTarget[i].x,activeTarget[i].y);
+				}
+				draw_set_alpha(1.0)
+			}
+		}
+	}
+}
+
+// Draw Battle text
+if (battleText != "")
+{
+	var _w = string_width(battleText)+20;
+	draw_sprite_stretched(sBox, 0, x+160-(_w*0.5), y+5,_w, 25);
+	draw_set_halign(fa_center);
+	draw_set_color(c_white);
+	draw_text(x+160, y+10, battleText);
+}
