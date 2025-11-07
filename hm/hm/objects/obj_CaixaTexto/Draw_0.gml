@@ -159,6 +159,7 @@ if accept_key
 
 
 // ..........................Desenhar a caixa de texto.........................//
+
 var _txtb_x = texbox_x + text_x_offset[page];
 var _txtb_y = texbox_y;
 txtb_img += txt_img_spd;
@@ -218,3 +219,4 @@ for(var c = 0; c < draw_char; c++)
 	draw_text(char_x[c, page], char_y[c, page], char[c, page]);
 	
 }
+

@@ -1,6 +1,15 @@
 /// @param text_id
 function scr_Game_text(_text_id)
-{	
+{
+	function teleportTexto (_sala, _x, _y, _face)
+	{
+	var _trans = instance_create_depth(0, 0, -9999999, obj_trasisao);
+	_trans.target_x = _x;
+	_trans.target_y = _y;
+	_trans.target_face = _face;
+	_trans.target_rm = _sala;
+	instance_destroy(obj_CaixaTexto);
+	}
 
 	switch (_text_id)
 	{
@@ -200,11 +209,4 @@ function scr_Game_text(_text_id)
 	}	
 }
 
-function teleportTexto (_sala, _x, _y, _face)
-{
-	var _trans = instance_create_depth(0, 0, -9999, obj_trasisao);
-	_trans.target_x = _x;
-	_trans.target_y = _y;
-	_trans.target_face = _face;
-	_trans.target_rm = _sala;
-}
+
