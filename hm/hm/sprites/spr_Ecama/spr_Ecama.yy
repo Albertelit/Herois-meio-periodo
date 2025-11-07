@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"EmmaQuarto",
-    "path":"folders/Sprites/JJ Torre/EmmaQuarto.yy",
+    "path":"folders/Sprites/Salas/JJ Torre/EmmaQuarto.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

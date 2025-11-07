@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"Escola",
-    "path":"folders/Sprites/Escola.yy",
+    "path":"folders/Sprites/Salas/Escola.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

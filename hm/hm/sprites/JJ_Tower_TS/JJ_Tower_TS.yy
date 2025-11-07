@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"JJ Torre",
-    "path":"folders/Sprites/JJ Torre.yy",
+    "path":"folders/Sprites/Salas/JJ Torre.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
