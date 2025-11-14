@@ -32,6 +32,8 @@ function scr_Game_text(_text_id)
 			scr_text("nao", "Emma J");
 		break;
 		
+		// --------------------------- Quarto da Emma --------------------------------------------------
+		
 		case "Emma PC":
 			scr_text("Meu Pc... ja me ajudou em muita coisa.", "Emma J Feliz");
 			scr_text("Adeus Morto ao amanhecer, iremos nos ver um dia", "Emma J");
@@ -48,6 +50,10 @@ function scr_Game_text(_text_id)
 		scr_text("bem, sempre fui uma aluna incrivel.", "Emma J Feliz");
 		scr_text("melhor aluna da minha classe.", "Emma J Feliz");
 		scr_text("seria melhor se não tivesse aquele nome.", "Emma J");
+		break;
+		case "Emma Poster": 
+			scr_text("Dead Hills, meu jogo favorito!", "Emma J Feliz");
+			scr_text("A arte e bonitinha e soundtrack incrivelmente boa", "Emma J Feliz")
 		break;
 		case "Quarto jj":
 		scr_text("o quarto do meu pai.", "Emma J");

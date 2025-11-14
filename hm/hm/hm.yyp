@@ -80,6 +80,7 @@
     {"id":{"name":"obj_Elixeira","path":"objects/obj_Elixeira/obj_Elixeira.yy",},},
     {"id":{"name":"obj_Emma","path":"objects/obj_Emma/obj_Emma.yy",},},
     {"id":{"name":"obj_Epc","path":"objects/obj_Epc/obj_Epc.yy",},},
+    {"id":{"name":"obj_FullScreen","path":"objects/obj_FullScreen/obj_FullScreen.yy",},},
     {"id":{"name":"obj_inimigo","path":"objects/obj_inimigo/obj_inimigo.yy",},},
     {"id":{"name":"obj_MenuPause","path":"objects/obj_MenuPause/obj_MenuPause.yy",},},
     {"id":{"name":"obj_MenuTitulo","path":"objects/obj_MenuTitulo/obj_MenuTitulo.yy",},},

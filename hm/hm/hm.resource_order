@@ -36,6 +36,7 @@
     {"name":"obj_battleUnitEnemy","order":1,"path":"objects/obj_battleUnitEnemy/obj_battleUnitEnemy.yy",},
     {"name":"obj_CaixaTexto","order":2,"path":"objects/obj_CaixaTexto/obj_CaixaTexto.yy",},
     {"name":"obj_CutScene","order":7,"path":"objects/obj_CutScene/obj_CutScene.yy",},
+    {"name":"obj_FullScreen","order":9,"path":"objects/obj_FullScreen/obj_FullScreen.yy",},
     {"name":"obj_MenuPause","order":4,"path":"objects/obj_MenuPause/obj_MenuPause.yy",},
     {"name":"obj_MenuTitulo","order":3,"path":"objects/obj_MenuTitulo/obj_MenuTitulo.yy",},
     {"name":"obj_pausa","order":5,"path":"objects/obj_pausa/obj_pausa.yy",},
