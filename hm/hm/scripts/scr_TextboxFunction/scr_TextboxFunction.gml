@@ -94,8 +94,11 @@ function create_textbox(_text_id)
 
 function interagir_texto()
 {
-	if place_meeting(x, y, obj_Emma) && keyboard_check_pressed(vk_enter)
+	if place_meeting(x, y, obj_Emma) && (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(90))
 	{
+		if (instance_exists(obj_CaixaTexto) == false)
+		{
 		create_textbox(text_id);
+		}
 	}
 }
