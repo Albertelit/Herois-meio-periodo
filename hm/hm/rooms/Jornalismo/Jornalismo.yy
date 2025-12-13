@@ -98,8 +98,8 @@
   ],
   "name":"Jornalismo",
   "parent":{
-    "name":"Cenas",
-    "path":"folders/Cenas.yy",
+    "name":"Escola Storm High",
+    "path":"folders/Cenas/Escola Storm High.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

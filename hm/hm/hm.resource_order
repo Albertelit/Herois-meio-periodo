@@ -2,6 +2,7 @@
   "FolderOrderSettings":[
     {"name":"Caminhos","order":1,"path":"folders/Caminhos.yy",},
     {"name":"Cenas","order":2,"path":"folders/Cenas.yy",},
+    {"name":"Escola Storm High","order":5,"path":"folders/Cenas/Escola Storm High.yy",},
     {"name":"Predio JJ","order":4,"path":"folders/Cenas/Predio JJ.yy",},
     {"name":"Conjuntos de tiles","order":3,"path":"folders/Conjuntos de tiles.yy",},
     {"name":"Curvas da animação","order":4,"path":"folders/Curvas da animação.yy",},
@@ -48,7 +49,7 @@
     {"name":"a","order":1,"path":"rooms/a/a.yy",},
     {"name":"Emma_Quarto","order":2,"path":"rooms/Emma_Quarto/Emma_Quarto.yy",},
     {"name":"JJTorre1","order":1,"path":"rooms/JJTorre1/JJTorre1.yy",},
-    {"name":"Jornalismo","order":3,"path":"rooms/Jornalismo/Jornalismo.yy",},
+    {"name":"Storm_High_Corredores1","order":1,"path":"rooms/Storm_High_Corredores1/Storm_High_Corredores1.yy",},
     {"name":"CoolSchool_tileset","order":7,"path":"sprites/CoolSchool_tileset/CoolSchool_tileset.yy",},
     {"name":"House_Objects_1_Revised","order":8,"path":"sprites/House_Objects_1_Revised/House_Objects_1_Revised.yy",},
     {"name":"spr_CutScene","order":13,"path":"sprites/spr_CutScene/spr_CutScene.yy",},

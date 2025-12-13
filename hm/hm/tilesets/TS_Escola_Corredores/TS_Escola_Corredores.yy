@@ -12,7 +12,7 @@
     "TileDataFormat":1,
   },
   "name":"TS_Escola_Corredores",
-  "out_columns":7,
+  "out_columns":9,
   "out_tilehborder":2,
   "out_tilevborder":2,
   "parent":{
@@ -38,5 +38,5 @@
   "tileWidth":32,
   "tilexoff":0,
   "tileyoff":0,
-  "tile_count":49,
+  "tile_count":77,
 }

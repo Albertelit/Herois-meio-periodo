@@ -1,1 +1,1 @@
-text_id = "Emma PC";
+text_id = "Emma Poster";

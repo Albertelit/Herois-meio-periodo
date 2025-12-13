@@ -12,6 +12,7 @@
   "Folders":[
     {"$GMFolder":"","%Name":"Caminhos","folderPath":"folders/Caminhos.yy","name":"Caminhos","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Cenas","folderPath":"folders/Cenas.yy","name":"Cenas","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Escola Storm High","folderPath":"folders/Cenas/Escola Storm High.yy","name":"Escola Storm High","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Predio JJ","folderPath":"folders/Cenas/Predio JJ.yy","name":"Predio JJ","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Conjuntos de tiles","folderPath":"folders/Conjuntos de tiles.yy","name":"Conjuntos de tiles","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Curvas da animação","folderPath":"folders/Curvas da animação.yy","name":"Curvas da animação","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -55,7 +56,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.1.210",
+    "IDEVersion":"2024.14.2.212",
   },
   "name":"hm",
   "resources":[
@@ -197,8 +198,8 @@
   "RoomOrderNodes":[
     {"roomId":{"name":"Tela_Titulo","path":"rooms/Tela_Titulo/Tela_Titulo.yy",},},
     {"roomId":{"name":"Emma_Quarto","path":"rooms/Emma_Quarto/Emma_Quarto.yy",},},
-    {"roomId":{"name":"Jornalismo","path":"rooms/Jornalismo/Jornalismo.yy",},},
     {"roomId":{"name":"Storm_High_Corredores1","path":"rooms/Storm_High_Corredores1/Storm_High_Corredores1.yy",},},
+    {"roomId":{"name":"Jornalismo","path":"rooms/Jornalismo/Jornalismo.yy",},},
     {"roomId":{"name":"Escola_S1","path":"rooms/Escola_S1/Escola_S1.yy",},},
     {"roomId":{"name":"JJTorre1","path":"rooms/JJTorre1/JJTorre1.yy",},},
     {"roomId":{"name":"Room5","path":"rooms/Room5/Room5.yy",},},
