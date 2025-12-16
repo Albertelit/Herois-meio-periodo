@@ -1,5 +1,5 @@
 // Draw the menu background
-draw_sprite_stretched(sBox, 0, x, y, widthFull, heightFull);
+draw_sprite_stretched(sBox, 0, x, y, 80, heightFull);
 draw_set_color(c_white);
 draw_set_font(fnM5x7);
 draw_set_halign(fa_left);
@@ -18,7 +18,7 @@ for (var l = 0; l < (visibleOptionsMax + _desc); l++)
     // Draw description if this is the first line and description exists
     if (l == 0 && _desc) 
 	{
-        draw_text(x + xmargin, y + ymargin, description);
+        draw_text(x + xmargin +60 , y + ymargin+60, description);
     }
 	
     else 

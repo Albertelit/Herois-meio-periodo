@@ -1,5 +1,4 @@
 instance_deactivate_all(true);
-
 units = [];
 turn = 0;
 unitTurnOrder = [];
@@ -33,12 +32,20 @@ for (var i = 0; i < array_length(enemies); i++)
 	array_push(units, enemyUnits[i]); 
 }
 //criar equipe
-for (var i = 0; i < array_length(global.party); i++)
+if (global.bom == 2){
+for (var i = 0; i < array_length(global.party_ma); i++)
+{
+    partyUnits[i] = instance_create_depth(x+90+(i*10), y+68+(i*25), depth-10, Obj_batlleUnitPc, global.party_ma[i]);
+	array_push(units, partyUnits[i]); 
+}}else
+{
+	for (var i = 0; i < array_length(global.party); i++)
 {
     partyUnits[i] = instance_create_depth(x+90+(i*10), y+68+(i*25), depth-10, Obj_batlleUnitPc, global.party[i]);
 	array_push(units, partyUnits[i]); 
-}
 
+}
+}
 //turnos embaralhados
 unitTurnOrder = array_shuffle(units);
 

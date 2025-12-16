@@ -1,6 +1,6 @@
 xspd = 0;
 yspd = 0;
-
+global.bom = 1; 
 move_speed = 3;
 
 sprite[RIGHT] = spr_EmmaR;

@@ -16,7 +16,7 @@ function Menu(_x, _y, _options, _description = -1, _width = undefined, _height =
 		//auto width
 		if (_width == undefined)
 		{
-			width = 1;
+			width = 2;
 			if (description != -1) width = max(width, string_width(_description));
 			for (var i = 0; i < _optionsCount; i++)
 			{

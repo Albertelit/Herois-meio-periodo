@@ -105,6 +105,7 @@ function scr_Game_text(_text_id)
 				scr_text("...", "Emma J feliz");
 				scr_text("ele nem vai perceber mesmo", "Emma J Feliz")
 				src_options("ir ao quarto de JJ", "Emma - vai")
+				global.bom += 1
 				break;
 			case "Emma - vai":
 				teleportTexto(JJquarto, 50, 230, UP)
