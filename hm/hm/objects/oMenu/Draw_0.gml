@@ -1,5 +1,5 @@
 // Draw the menu background
-draw_sprite_stretched(sBox, 0, x, y, 80, heightFull);
+draw_sprite_stretched(sBox, 0, x, y, 100, heightFull);
 draw_set_color(c_white);
 draw_set_font(fnM5x7);
 draw_set_halign(fa_left);
