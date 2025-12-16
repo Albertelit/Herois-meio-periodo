@@ -98,7 +98,7 @@ function BattleStateSelectAction()
 					}
 					else
 					{
-						array_push(_subMenus[$ _action.subMenus], [_nameAndCount, MenuSelectAction, [_unit, _action], _available])
+						array_push(_subMenus[$ _action.subMenu], [_nameAndCount, MenuSelectAction, [_unit, _action], _available])
 					}
 				}
 			}

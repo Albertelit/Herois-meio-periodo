@@ -2,31 +2,50 @@
 global.actionLibrary =
 
 {
-    attack :
-    {
-        name : "Attack", //0
-        description : "{0} Ataca!",
-        subMenu : -1,
-        targetRequired : true,
-        targetEnemyByDefault : true,
-        targetAll : MODE.NEVER,
+	desmoralizar: {  
+        name: "Desmoralizar",
+        description: "{0} desmoraliza o inimigo!",
+        subMenu: "Magic",  
+        pmCost: 2,  
+        targetRequired: true,
+        targetEnemyByDefault: true,
+        targetAll: MODE.NEVER,
         Atack: ACAO.INIMIGO,
-        userAnimation : "attack",
-        effectSprite : sAttackBonk,
-        effectOnTarget : MODE.ALWAYS,
-        func : function(_user, _targets)
-        {
-            var _target = _targets[0]; // <- pega o primeiro alvo
-            var _damage = ceil((_user.poder + random_range(-_user.poder * 0.25, _user.poder * 0.25)) - _target.defesa);
-            
-            if (_damage < 1) { 
-                _damage = _user.poder; // <- aqui também corrigi "user" para "_user"
-            }
-            
-           BattleChangeHP(_user, _target, -_damage, 0, 0);
-;
+        userAnimation: "attack",
+        effectSprite: sAttackBonk,
+        effectOnTarget: MODE.ALWAYS,
+        func: function(_user, _targets) {
+            var _target = _targets[0];  
+            var _amount = -choose(1, 2);  
+            var _pmCost = 2;  
+            BattleChangeDefense(_user, _target, _amount, _pmCost, 0);
         }
     },
+	    attack :
+	    {
+	        name : "Attack", //0
+	        description : "{0} Ataca!",
+	        subMenu : -1,
+	        targetRequired : true,
+	        targetEnemyByDefault : true,
+	        targetAll : MODE.NEVER,
+	        Atack: ACAO.INIMIGO,
+	        userAnimation : "attack",
+	        effectSprite : sAttackBonk,
+	        effectOnTarget : MODE.ALWAYS,
+	        func : function(_user, _targets)
+	        {
+	            var _target = _targets[0]; // <- pega o primeiro alvo
+	            var _damage = ceil((_user.poder + random_range(-_user.poder * 0.25, _user.poder * 0.25)) - _target.defesa);
+            
+	            if (_damage < 1) { 
+	                _damage = _user.poder; // <- aqui também corrigi "user" para "_user"
+	            }
+            
+	           BattleChangeHP(_user, _target, -_damage, 0, 0);
+
+	        }
+	    },
 
 	Taser : // sim eu sei, e meio paia, mas deixa funfar primeiro e dps troco
 	{
@@ -35,7 +54,7 @@ global.actionLibrary =
         subMenu : "Magic",
 		pmCost : 2,
         targetRequired : true,
-        targetEnemyByDefault : true, //0: party/self
+        targetEnemyByDefault : true, 
         targetAll : MODE.NEVER,
 		Atack: ACAO.INIMIGO,
         userAnimation : "attack",
@@ -72,6 +91,7 @@ global.actionLibrary =
     BattleChangeHP(_user, _targets[0], _heal, 2, 0);
 }
 
+
 	},
 };
 
@@ -94,16 +114,16 @@ PROPRIO =2,
 global.party = [
 	{
 		nome: "Emma", // 0
-		hp: 15,
+		hp: 20,
 		hpMax: 15,
-		defesa: 2,
+		defesa: 4,
 		pm: 9,
 		pmMax: 9,
 		poder: 4,
-		int: 4,
-		perigo: 2, //não esqueça que os personagens vão ter perigo para serem focados
+		int: 2,
+		perigo: 5, //não esqueça que os personagens vão ter perigo para serem focados
 		sprites: {idle: spr_EmmaD_1, attack: spr_EmmaR, defend: spr_EmmaD, down: spr_EmmaU},
-		actions: [global.actionLibrary.attack, global.actionLibrary.Taser]
+		actions: [global.actionLibrary.attack, global.actionLibrary.desmoralizar, global.actionLibrary.Taser]
 		},
 		
 		{
@@ -147,10 +167,8 @@ global.party = [
 		sprites: {idle: spr_AnniD, attack: spr_AnniR, defend: spr_AnniR, down: spr_AnniD},
 		actions: [global.actionLibrary.attack,global.actionLibrary.cura]
 		}
-	
-]
-
-// inimigos
+		]
+		// inimigos
 
 global.enemies = [
     {
@@ -160,11 +178,11 @@ global.enemies = [
         pm: 6,
         pmMax: 6,
         poder: 4,
-		defesa: 2,
+        defesa: 2,
         sprites: {idle: sBat, attack: spr_parede, defend: spr_parede, down: spr_parede},
         actions: [global.actionLibrary.attack],
         AIscript: function() 
-		{
+        {
     var _action = actions[0];
     var _possibleTargets = array_filter(Obj_battle.partyUnits, function(_unit, _index)
     {
@@ -197,6 +215,6 @@ global.enemies = [
 
     // retorna ação + alvo
     return [_action, _target];
-		}
-	},
+        }
+    },
 ]
