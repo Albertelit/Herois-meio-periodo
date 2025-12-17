@@ -56,6 +56,14 @@ function scr_text(_text)
 				txtb_spr[page_number] = spr_Pmenu;
 				snd[page_number] = Animal_Crossing;
 			break;
+			case "Anniela":
+				speaker_sprite[page_number] = Anni_Neutra;
+				txtb_spr[page_number] = spr_Amenu;
+			break;
+			case "Anniela Feliz":
+				speaker_sprite[page_number] = Anni_Feliz;
+				txtb_spr[page_number] = spr_Amenu;
+			break;
 		}
 	}
 	// lado em que está o personagem

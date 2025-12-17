@@ -20,7 +20,6 @@
     {"name":"inst_18F79F48","path":"rooms/Emma_Quarto/Emma_Quarto.yy",},
     {"name":"inst_5B9DEA66","path":"rooms/Emma_Quarto/Emma_Quarto.yy",},
     {"name":"inst_FF85C4A","path":"rooms/Emma_Quarto/Emma_Quarto.yy",},
-    {"name":"inst_2AE12A26","path":"rooms/Emma_Quarto/Emma_Quarto.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -41,7 +40,6 @@
         {"$GMRInstance":"v4","%Name":"inst_5C2A4DC2","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5C2A4DC2","objectId":{"name":"obj_Epc","path":"objects/obj_Epc/obj_Epc.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":160.0,"y":32.0,},
         {"$GMRInstance":"v4","%Name":"inst_50B16732","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_50B16732","objectId":{"name":"obj_Ecama","path":"objects/obj_Ecama/obj_Ecama.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":32.0,"y":160.0,},
         {"$GMRInstance":"v4","%Name":"inst_6BB8C379","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6BB8C379","objectId":{"name":"obj_Elixeira","path":"objects/obj_Elixeira/obj_Elixeira.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":96.0,"y":64.0,},
-        {"$GMRInstance":"v4","%Name":"inst_2AE12A26","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2AE12A26","objectId":{"name":"obj_inimigo","path":"objects/obj_inimigo/obj_inimigo.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":160.0,"y":128.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"objetos","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"objetos","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":8,"SerialiseWidth":10,"TileCompressedData":[
           -11,-2147483648,1,6,-3,-2147483648,-2,0,-3,-2147483648,5,10,13,-2147483648,0,-2147483648,-3,0,3,-2147483648,

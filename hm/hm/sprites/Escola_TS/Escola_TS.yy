@@ -2,7 +2,7 @@
   "$GMSprite":"v2",
   "%Name":"Escola_TS",
   "bboxMode":0,
-  "bbox_bottom":255,
+  "bbox_bottom":287,
   "bbox_left":0,
   "bbox_right":223,
   "bbox_top":0,
@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"37a5cf05-c4ae-4404-8131-e99bd1649ecb","name":"37a5cf05-c4ae-4404-8131-e99bd1649ecb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"7cde2eef-e6ca-461d-a18f-5d43e7ba39ae","name":"7cde2eef-e6ca-461d-a18f-5d43e7ba39ae","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":32,
   "gridY":32,
-  "height":352,
+  "height":288,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"df671388-79ca-427b-8f56-3ceb7c2335a0","blendMode":0,"displayName":"default","isLocked":false,"name":"df671388-79ca-427b-8f56-3ceb7c2335a0","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"395c89b3-a128-45e8-ae4a-f114089d323e","blendMode":0,"displayName":"default","isLocked":false,"name":"395c89b3-a128-45e8-ae4a-f114089d323e","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"Escola_TS",
   "nineSlice":{
@@ -90,8 +90,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"37a5cf05-c4ae-4404-8131-e99bd1649ecb","path":"sprites/Escola_TS/Escola_TS.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"581badab-356a-49c2-b144-a4f2e65985ee","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7cde2eef-e6ca-461d-a18f-5d43e7ba39ae","path":"sprites/Escola_TS/Escola_TS.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"c6b5584f-2cd5-4d70-ba50-ae9f32dd37f0","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

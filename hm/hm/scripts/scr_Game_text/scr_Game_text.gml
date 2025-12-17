@@ -80,7 +80,7 @@ function scr_Game_text(_text_id)
 		///////////////////////////     Escolha importante      ///////////////////////////////////
 		
 				
-				case "escolha":
+			case "escolha":
 				scr_text("ok emma se acalma", "Emma J Feliz")
 				scr_text("e hoje que voce sai desse lugar", "Emma J");
 				scr_text("voce ja fez suas malas", "Emma J");
@@ -140,8 +140,7 @@ function scr_Game_text(_text_id)
 		break;
 		case "rato":
 			scr_text("the rats?", "Emma J");
-			scr_text("quem e o idiota que colocario esse nome para", "Emma J Feliz");
-			scr_text("um time de basquete?", "Emma J Feliz");
+			scr_text("quem e o idiota que colocario esse nome para um time de basquete?", "Emma J Feliz");
 		break;
 		case "desaparecida":
 			scr_text("Lilith uma garota desaparecida", "Emma J");
@@ -149,65 +148,99 @@ function scr_Game_text(_text_id)
 			scr_text("espero que ela esteja bem...", "Emma J");
 		break;
 		case "refeitorio":
-			scr_text("ulala o refeitorio", "Emma J Feliz");
-			scr_text("já consigo sentir o cheiro da comida", "Emma J Feliz");
-			scr_text("espero que a comida seja tão bom quanto o cheiro","Emma J feliz");
+			scr_text("olha so, o refeitorio, nao tenho motivo para ir, mas...", "Emma J Feliz");
+				src_options("passear", "nada");
+				src_options("nao ir", "nada");
+				
 		break;
-			case "sala 1":
-			scr_text("sala do primeiro periodo, é aqui que eu vou estudar", "Emma J feliz");
-			scr_text("devo entrar agora? talvez tenha mais que eu queira ver", "Emma J");
-				src_options("entrar", "emma - sim");
-				src_options("nao entrar", "emma - não");
+		case "sala 1":
+			scr_text("sala do primeiro periodo, é aqui que eu vou estudar", "Emma J Feliz");
 		break;
-			case "emma - sim":
-				scr_text("vamos la entao", "Emma J Feliz");
-				scr_text("...");
-				teleportTexto (a, 526, 170, DOWN)
-				break;
-			case "emma - não":
-				scr_text("...", "Emma J");
-				scr_text("ainda da para esperar mais um pouco.", "Emma J");
-			break;
+		case "sala 2":
+			scr_text("sala do 2° ano, estranhamente vazia...?", "Emma J");
+		break;
+		
+		case "Nerds":
+			scr_text("Descupe meu clube ja esta com o numero maximo de integrantes");
+			scr_text("Descupe ter que decepcionar assim");
+			scr_text("mas ja temos muitos Otakus em nossa familia.");
+		break;
+		case "Cultista":
+			scr_text("Tenho que me perdoar");
+			scr_text("O clube de ocultismo nao esta aceitando novos discipulos");
+			scr_text("os espiritos ja estão ocupados...");
+			scr_text("A nao ser que queira ser sacrificio?");
+			scr_text("esse cargo tem vaga ainda.");
+		break;
+		case "Atletas":
+			scr_text("Cara... foi mal ai, mas nossa equipe ja ta completa");
+			scr_text("mas você sempre está livre pra assistir os treinos!");
+		break;
+		case "Artistas":
+			scr_text("*Trancado*");
+		break;
+		case "Jornalistas":
+			scr_text("Huh? parece que ainda tem vagas... que sorte!", "Emma J Feliz");
+				src_options("Entrar", "Jornalista")
+				src_options("explorar mais", "nada")
+		break;
+		case "Jornalista":
+			teleportTexto(Jornalismo, 90, 160, DOWN);
+		break;
+		case "nada":
+			scr_text("...", "Emma J");
+		break;
 			
-			// --------------------------- Escola Corredores --------------------------------------------------
 			
+			// --------------------------- Clube de jornalismo --------------------------------------------------
+		case "Anni oi":
+			scr_text("Oh, voce quer entra no clube de jornalismo?", "Anniela");
+			scr_text("Espero que nao seja por nao ter nem um outro clube com vaga haha", "Anniela Feliz");
+				src_options("essa foi a ultima opçao", "Anni Decepcao")
+				src_options("Quero sim", "A Neutro")
+				src_options("ser uma reporter e meu sonho", "Anni animada")
+		break;
+		case "Anni Decepcao":
+			scr_text("oh... eu esperava isso, pessoas normais não escolhem jornalismo", "Anniela");
+			scr_text("devem estar no clube de jogos ou de esporte ou qualquer coisa melhor...", "Anniela");
+		break
+		case "A Neutro":
+			scr_text("bem voce pode ir conversar com os outros membros do clube", "Anniela");
+			scr_text("cuidado com o poison, ele morde... o aron tambem morde...", "Anniela");
+			scr_text("e melhor ficar em uma distancia segura deles", "Anniela Feliz");
+		break;
+		case "Anni animada":
+			scr_text("Ah! serio...? fico surpresa, você vai gostar daqui", "Anniela Feliz");
+			scr_text("temos membros agitados, mas você se acustuma", "Anniela Feliz");
+			scr_text("Se tiver qualquer duvida pode vim a mim... porfavor.", "Anniela Feliz");
+		break;
+		
+		
+		case "1° discusão":
+			scr_text("a gente podia sabe o que? se juntar com o clube de esportes", "Aron L");
+			scr_text("Tenho certeza que ficariamos famosos assim!", "Aron L");
 			
-				
-			case "cadeira patetica":
-				scr_text("por que diabos alguem tem tantos livros na mesa?", "Emma J");
-				scr_text("a mangueira do bombeiro... que livro e esse?", "Emma J Feliz");
-			break;
-				
-			case "cadeira padrao":
-				scr_text("hmmm... não essa ja tem alguem aqui", "Emma J");
-			break;
-				
-			case "cadeira prota":
-				scr_text("... parece o lugar perfeito", "Emma J Feliz");
-				scr_text("bem... vamos lá?, vou assitir a aula e ir para o clube", "Emma J Feliz");
-				scr_text("de jornalismo!", "Emma J Feliz")
-					src_options("Simbora", "simbora")
-					src_options("melhor olha ao redor", "babaca")
-			break;
-					
-				case "simbora":
-					scr_text("so algumas horinhas");
-						src_options("partiu clube", "clube");
-				break;
-				case "clube":
-					teleportTexto(Jornalismo, 90, 160, DOWN)
-				break;
-				
-				case "Poison teste":
-					scr_text("Voces querem ir para um lugar bem legal?", "Poison", -1);
-					scr_text("voce nao quer dizer que...", "Emma J");
-						src_options("Poison...... por favor nao.", "Backrooms");
-				break;
-				case "Backrooms":
-					teleportTexto(Room5, 50, 30, DOWN)
-				break
+			scr_text("Voce e burro? assim os unicos interessados por nos", "Poison");
+			scr_text("sera os que querem saber so de jogos, eles nao ligam!", "Poison")
+			
+			scr_text("alguma ideia melhor espertao?", "Aron L");
+			scr_text("entao, eu tava andando pela tubulacao-", "Poison");
+			scr_text("impossivel isso não ser ilegal", "Aron L");
+			scr_text("e ouvi professores discutindo sobre um lugar secreto", "Poison");
+			scr_text("o misterio ira chamar muita atencao", "Poison");
+			scr_text("E! de fofoqueiros, queremos credibilidade", "Aron L");
+			
+			scr_text("Quer saber? novata, decida", "Poison");
+				src_options("vamos a quadra!", "Aron quest");
+				src_options("botos sao interessantes", "Poison Quest");
+		break;
+		case "Aron quest":
+			teleportTexto(Esgotos, 30, 125, RIGHT);
+		break;
+		case "Poison quest":
+			teleportTexto(Esgotos, 30, 125, RIGHT);
+		break;
+		
 				
 	}	
 }
-
-

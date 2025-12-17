@@ -9,7 +9,10 @@
     "name":"OBJ_Player",
     "path":"folders/Objetos/Batalhas/OBJ_Player.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_parede",
+    "path":"objects/obj_parede/obj_parede.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

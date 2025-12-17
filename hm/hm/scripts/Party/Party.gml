@@ -83,7 +83,7 @@ global.actionLibrary =
         targetAll : MODE.NEVER,
 		Atack: ACAO.INIMIGO,
         userAnimation : "attack",
-        effectSprite : ef_explosion,
+        effectSprite : sAttackFire,
         effectOnTarget : MODE.ALWAYS,
         func : function(_user, _targets)
         {
@@ -261,7 +261,7 @@ global.enemies = [
         pmMax: 6,
         poder: 4,
         defesa: 2,
-        sprites: {idle: sBat, attack: spr_parede, defend: spr_parede, down: spr_parede},
+        sprites: {idle: sBat, attack: sBatAttack, defend: sBatAttack, down: spr_parede},
         actions: [global.actionLibrary.attack],
         AIscript: function() 
         {
